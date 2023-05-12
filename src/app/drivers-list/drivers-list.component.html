@@ -1,0 +1,71 @@
+<h1 class="my-5">
+  Nos pilotes
+</h1>
+<p *ngIf="isOnline">Bienvenue dans la matrice ! </p>
+
+<div class="card text-center shadow p-5">
+<p>
+  {{book.name}}
+</p>
+
+<hr>
+
+<p>
+  <!-- Directive Structurelle - *ngIf -->
+  <span *ngIf="book.price; else pasPrice">{{book.price}} &euro</span>
+
+  <ng-template #pasPrice>
+    <span>Non communiqué</span>
+  </ng-template>
+
+
+</p>
+
+
+<ul>
+  <li *ngFor="let fruit of fruits; let i = index">
+    {{i}} {{fruit | titlecase}}
+  </li>
+</ul>
+
+
+</div>
+
+<p [style.color]="getColor()"> style.color et couleur en props dans la class (partie logique) </p>
+
+<div [style.background-color]="flag ? colorA : colorB">
+  couleur qui change selon CONDITION
+</div>
+
+<h3 [ngStyle]="{color:colorA, margin: '50px', padding: '1,5em'}">Ceci est fait avec ngStyle</h3>
+
+<h3 [ngClass]="{'text-center':flag}"></h3>
+
+
+<p class="badge" [ngClass]="{'badge':true, 'bg-success':stock, 'bg-danger':!stock}">Exemple de pk c'est different quand la lib marche avec 2 mot clé</p>
+
+<p [ngClass]="{'text-center':isCentred}">
+  Un texte centrer avec ngClass + event binding + ngIF
+
+</p>
+
+<button class="badge p-2" [ngClass]="{'bg-primary':isCentred, 'bg-secondary':!isCentred}"
+(click)="onClick()">
+<span *ngIf="!isCentred">Centrer le texte</span>
+<span *ngIf="isCentred">Ne pas centrer</span></button>
+
+
+<button class="badge p-2" [ngClass]="{'bg-success':isHere, 'bg-light':!isHere}" (click)="onClickHere()">
+  <span *ngIf="isHere">Afficher</span>
+  <img *ngIf="!isHere" src="/assets/img/bootstrap.png" alt="bootstrap">
+  </button>
+
+  <button class="badge p-3" [ngClass]="{'bg-success':stockBtn >= 7, 'bg-warning':stockBtn <= 6, 'bg-danger':stockBtn < 4  } " (click)="onClickDecrease()">Appuie {{stockBtn}}</button>
+
+  <hr>
+
+
+
+<div class="card-group justify-content-center">
+  <app-driver-item  *ngFor="let oneDriver of drivers" [driver]="oneDriver" ></app-driver-item>
+</div>

@@ -1,0 +1,19 @@
+<h1 class="p-5 bg-secondary text-danger text-center rounded my-5 shadow">
+  Drive-X
+</h1>
+
+<a routerLink="cars" routerLinkActive=""><button class="bg-primary text-light rounded-3">Exotik Cars</button></a>
+
+<h2 class="my-5 text-center">Nos pilotes d'exception</h2>
+
+<div class="card-group justify-content-center">
+  <app-driver-item  *ngFor="let oneDriver of bestDrivers" [driver]="oneDriver" ></app-driver-item>
+</div>
+
+
+<h2 class="my-5 text-center">Nos meilleurs voitures</h2>
+
+<div class="card-group  justify-content-center">
+  <app-car-item  *ngFor="let oneCar of bestCars" [car]="oneCar">
+  </app-car-item>
+</div>

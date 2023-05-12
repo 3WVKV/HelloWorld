@@ -1,0 +1,53 @@
+<h1 class="my-5">
+  Nos Véhicules
+</h1>
+<!--  -->
+<!-- <p class="my-5">
+  {{test}}
+</p>
+
+<div class="card shadow p-3 text-center">
+  <h2>
+    {{game.title}}
+  </h2>
+
+  <p class="h3">
+    Plateforme : {{game.support}}
+  </p>
+
+  <hr>
+  <p class="badge bg-success w-50 m-auto">
+    Sortie : {{game.date}}
+  </p>
+
+  <p class="badge bg-info my-3 w-50 m-auto">
+    Prix : {{getPrice()}} &euro;
+  </p>
+  <hr>
+  <img [src]="coverImage" alt="{{game.title}}">
+
+  <hr>
+  <button class="btn btn-success" [disabled]="!isStocked">Acheter</button>
+
+  <input (focus)="jeuDeVoiture()" type="text" class="form-control my-3" [placeholder]="test">
+
+  <button class="btn btn-success" (click)="affiche()">Push the Button tum tum tum</button>
+
+  <button class="btn btn-success my-5" (copy)="pouet()">HAHAHAHA</button>
+
+  <h3 class="my-5 bg-primary w-25" (mouseover)="truc()">On survol !</h3>
+
+
+
+</div> -->
+
+<div class="badge bg-dark text-danger">
+  Données mise à jour: {{carUpdate | date: "EEEE dd MMMM  yyyy H:mm"}}
+</div>
+
+<div class="card-group  justify-content-center">
+  <app-car-item  *ngFor="let oneCar of cars" [car]="oneCar" ></app-car-item>
+</div>
+
+
+
